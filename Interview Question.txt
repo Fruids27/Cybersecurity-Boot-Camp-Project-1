@@ -1,0 +1,36 @@
+Interview Question
+
+Domain: Logging and Monitoring
+
+Question 2: Challenges of Collecting Large Amounts of Log Data
+
+What are the challenges of collecting huge amounts of log data? How do security analysts deal with them?
+
+1a.Log collection and analysis is a major task performed during the day-to-day operations of security professionals monitoring networks. Large amounts of log data from different varieties flow to the security analysis causing several challenges. Some of the challenges are as follows; hard time distinguishing between useful and non-useful data, knowing what is suspicious vs normal, log collection takes up space on the disk drive, and hard to interpret.    
+1b. The way security analysts deal with large amounts of log data is by implementing SIEMS such as ELK stack.  
+
+2a. I dealt with the log data after I installed the ELK server along with Filebeat and Metricbeat on the web servers.
+
+2b. The types of data that I was looking for fromMetricbeat were CPU usage, Network IO ECS, number of containers, Docker containers per host, Docker images and names, and memory usage.  On the Filebeat side, I was collecting Syslogs, top sudo commands by the user, sudo errors, SSH login attempts, successful SSH logins, SSh users of failed login attempts.  Also, new users, new users by a shell, new groups, new users of time, new users by home directory, and new groups over time.
+
+2d. I was looking for hackers attempting to access the webservers without authorization or hackers who have illegally entered the webserver and were making changes.
+
+3a. The information that I need to find what I am looking for are SSH login attempts, both successful and failed, and if the authorized user accesses the system did they escalate privileges.
+
+3b.  An analyst needs a way to collect, index, centralize, store search, and visualize the data to properly analyze a large amount of log data to find this information.
+
+3c. In Project 1 I used Kibana to visailzie and analyze the log data.
+
+4. Since I was looking for an attacker attempting to enter or have entered my system without access, I used the SSH logins, Sudo commands, and new user and groups dashboards to look for and examine any abnormal/malicious activity.
+
+5a. I did not collect/inspect any other log data such as Elasticsearch logs, database logs, data from the SIEM component of Kibana. Also, I did not collect/inspect any other metrics, such as Elasticsearhc metrics, or DB metrics. 
+
+5b. There is a possibility that having access to other modules in kibana could help with discovering breachs and/or data exfiltration/modifications.  If I had DB metrics there is a possibility that I could detect that data was viewed, transferred, or modified. 
+
+
+
+
+
+
+
+
